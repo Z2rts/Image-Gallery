@@ -1,6 +1,8 @@
 'use client'
-
+// import styles from './styles.css'
 import { useEffect, useState } from "react";
+
+import './styles.css'
 
 function Test() {
   const [id, setId] = useState(1018)
@@ -20,6 +22,7 @@ function Test() {
         || randomNumber === 1030
         || randomNumber === 1046
         || randomNumber === 1057
+        || randomNumber === 1007
       )
       setId(randomNumber)
     }
@@ -41,13 +44,15 @@ function Test() {
   ]
 
   return (
-    <div style={{width: "70vw", margin: "auto"}}>
+    <div className='text'>
       <h1>Image Gallery</h1>
-      {images.map((image) => (
-        <div key={id}>
-          <img src={image.original} alt="Original" />
-        </div>
-      ))}
+      <div className="container">
+        {images.map((image) => (
+          <div key={id} className="img">
+            <img src={image.original} alt="Original" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
